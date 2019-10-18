@@ -130,11 +130,14 @@ function createMap(earthquakes) {
         collapsed: false
     }).addTo(myMap);
 
-    // Create a legend on bottom right
+    // Did we go over adding legends to MapBox?  I don't recall that.
+    // I googled it and found this, which works but maybe there are easier ways?
+
+    // Create a control on bottom right
     var legend = L.control({ position: "bottomright" });
 
-    // create a new div for legend
-    // add some html elements with background colors matching map coloring
+    // create a new div for control
+    // add some html elements with background colors matching map circle coloring
     // add some text describing that color's magnitude
     legend.onAdd = function (map) {
         var div = L.DomUtil.create("div", "legend");
@@ -149,6 +152,6 @@ function createMap(earthquakes) {
         return div;
     };
 
-    // add legend to our map
+    // add legend control to our map
     legend.addTo(myMap);
 }
